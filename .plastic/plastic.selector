@@ -1,0 +1,4 @@
+repository "Videogame_Lengua@MPaz19@cloud"
+  path "/"
+    br "/main"
+    co "/main"
