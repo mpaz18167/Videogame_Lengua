@@ -27,19 +27,19 @@ public class PlayerController : MonoBehaviour
     private float duracionBufferSalto = 0.05f;
     private float tiempoBufferSalto = 0f;
 
-    private float fuerzaTrampolin = 15f;
+    private float fuerzaTrampolin = 35f;
 
     public bool enLaPared = false;
 
     public Vector3 posicionRaycast;
-    private float centradoRaycast = 0.2f;
+   // private float centradoRaycast = 0.2f;
     private float alturaCabezaRaycast = 0.6f;
     //private float centroCabezaRaycast = 0.10f;
     private float longitudRaycast = 0.5f;
 
     public LayerMask paredLayerMask;
     private float saltoParedLateral = 18f;
-    private float separacionParedSalto = 0.5f;
+   // private float separacionParedSalto = 0.5f;
 
 
     private Quaternion rotacionPersonaje;
