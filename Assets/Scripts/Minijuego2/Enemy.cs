@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour
 {
@@ -17,6 +19,10 @@ public class Enemy : MonoBehaviour
     [SerializeField] private int puntos = 0; 
     [SerializeField] private int vidas = 3;
     [SerializeField] private bool pregCorrect;
+    [SerializeField] private string nombreEscena;
+
+    public GameObject puntostextObj;
+    public GameObject vidastextObj;
 
     private Vector3 moveDirection;
     private float changeDirectionTimer;
@@ -129,10 +135,18 @@ public class Enemy : MonoBehaviour
 
     private void OnDuckShoot(bool estadoCorrecto)
     {
+
         if (estadoCorrecto)
         {
             puntos++;
             Debug.Log("Le diste +1 punto");
+
+            TextMeshProUGUI puntosText = puntostextObj.GetComponent<TextMeshProUGUI>();
+            if (puntosText != null)
+            {
+                puntosText.text = "" + puntos;
+            }
+            
 
 
             //Destroy(gameObject);
@@ -142,6 +156,14 @@ public class Enemy : MonoBehaviour
             vidas--;
             Debug.Log("Perdista -1 vida");
 
+            TextMeshProUGUI vidasText = vidastextObj.GetComponent<TextMeshProUGUI>();
+            if (vidasText != null)
+            {
+                vidasText.text = "" + vidas;
+            }
+
+            
+
 
             //Destroy(gameObject);
         }
@@ -150,7 +172,8 @@ public class Enemy : MonoBehaviour
         if (vidas <=0)
         {
             Debug.Log("Perdista todas las vidas");
-            
+            SceneManager.LoadScene(nombreEscena);
+
         }
 
     }

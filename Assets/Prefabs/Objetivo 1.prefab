@@ -128,3 +128,4 @@ MonoBehaviour:
   puntos: 0
   vidas: 3
   pregCorrect: 0
+  nombreEscena: Lobby
