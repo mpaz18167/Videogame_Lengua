@@ -140,13 +140,13 @@ public class Enemy : MonoBehaviour
             puntos++;
             Debug.Log("Le diste +1 punto");
 
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
         else
         {
             vidas--;
             Debug.Log("Perdista -1 vida");
-            Destroy(gameObject);
+           // Destroy(gameObject);
 
         }
         lastShootTime = Time.time;

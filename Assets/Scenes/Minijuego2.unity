@@ -1386,6 +1386,7 @@ GameObject:
   m_Component:
   - component: {fileID: 750835638}
   - component: {fileID: 750835637}
+  - component: {fileID: 750835639}
   m_Layer: 0
   m_Name: ControladorEscena
   m_TagString: Untagged
@@ -1421,6 +1422,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &750835639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750835636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63e2313252eb9f3408f7489ba6c550e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyScript: {fileID: 1859355565}
+  puntostext: {fileID: 1512015359}
+  vidastext: {fileID: 1074527358}
 --- !u!1 &786545469
 GameObject:
   m_ObjectHideFlags: 0
@@ -2470,6 +2486,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1859355565 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 529245460031362994, guid: 3c88b9fc6c3d03547b96cb0a495ce030, type: 3}
+  m_PrefabInstance: {fileID: 1551571466}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89cb08f3758d0c644921ece382ec0a6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
