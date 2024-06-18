@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Lobby.unity
     guid: 10409f40d5b7ab34fa7b62568642c13a
   - enabled: 1
-    path: Assets/Scenes/MiniJuego1-1.unity
+    path: Assets/Scenes/MiniJuego1.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Minijuego2.unity
+    guid: aaa53015302a9e3488e26f1f7d88d719
   m_configObjects: {}

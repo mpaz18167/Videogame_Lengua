@@ -7,10 +7,26 @@ public class CamaraControlador : MonoBehaviour
 {
 
     public Transform objetivo;
-
-    private Vector3 offset;
-    // Start is called before the first frame update
+    public float smoothTime = 0.3f;
+    public Vector3 offset;
+    private Vector3 velocity = Vector3.zero;
+    
     void Start()
+    {
+        
+    }
+
+    private void Update()
+    {
+        if (objetivo != null)
+        {
+            Vector3 targetPosition = objetivo.position + offset;
+            transform.position = Vector3.SmoothDamp(transform.position,targetPosition,ref velocity,smoothTime);
+        }
+    }
+
+    /*
+     void Start()
     {
         offset = objetivo.position - transform.position;
     }
@@ -19,4 +35,5 @@ public class CamaraControlador : MonoBehaviour
     {
         transform.position = objetivo.position - offset;
     }
+    */
 }

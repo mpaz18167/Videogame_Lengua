@@ -1580,6 +1580,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objetivo: {fileID: 1401540031}
+  smoothTime: 0.3
+  offset: {x: 17, y: 3, z: 3}
 --- !u!1 &998030913
 GameObject:
   m_ObjectHideFlags: 0
@@ -2623,13 +2625,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3334e0aeef435304f8730f1f91d0d817, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 4.5
-  gravedad: 10
+  velocidad: 8
+  gravedad: 18
   fuerzaExtra: 2
-  fuerzaSalto: 15
+  fuerzaSalto: 20
   enelAire: 0
   saltoDoble: 0
-  velocidadDash: 8
+  velocidadDash: 12
   duaracionCoyoteTime: 0.15
   enLaPared: 0
   posicionRaycast: {x: 0, y: 0, z: 0}

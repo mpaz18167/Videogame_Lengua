@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 public class OpcionesMenu : MonoBehaviour
 {
 
-    public void EmpezarNivel (string NombreNivel)
+    public void EmpezarNivel(string NombreNivel)
     {
-        SceneManager.LoadScene (NombreNivel);
+        SceneManager.LoadScene(NombreNivel);
     }
     public void Salir()
     {
