@@ -16,13 +16,12 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] private Camera mainCamera; 
 
-    [SerializeField] private int puntos = 0; 
-    [SerializeField] private int vidas = 3;
+    [SerializeField] public int puntos = 0; 
+    [SerializeField] public int vidas = 3;
     [SerializeField] private bool pregCorrect;
     [SerializeField] private string nombreEscena;
 
-    public GameObject puntostextObj;
-    public GameObject vidastextObj;
+
 
     private Vector3 moveDirection;
     private float changeDirectionTimer;
@@ -141,31 +140,14 @@ public class Enemy : MonoBehaviour
             puntos++;
             Debug.Log("Le diste +1 punto");
 
-            TextMeshProUGUI puntosText = puntostextObj.GetComponent<TextMeshProUGUI>();
-            if (puntosText != null)
-            {
-                puntosText.text = "" + puntos;
-            }
-            
-
-
-            //Destroy(gameObject);
+            Destroy(gameObject);
         }
         else
         {
             vidas--;
             Debug.Log("Perdista -1 vida");
+            Destroy(gameObject);
 
-            TextMeshProUGUI vidasText = vidastextObj.GetComponent<TextMeshProUGUI>();
-            if (vidasText != null)
-            {
-                vidasText.text = "" + vidas;
-            }
-
-            
-
-
-            //Destroy(gameObject);
         }
         lastShootTime = Time.time;
 

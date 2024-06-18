@@ -129,3 +129,5 @@ MonoBehaviour:
   vidas: 3
   pregCorrect: 1
   nombreEscena: Lobby
+  puntostextObj: {fileID: 0}
+  vidastextObj: {fileID: 0}
