@@ -257,7 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 097dca099919a48488e35a14a86296b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nombreEscena: MiniJuego3
+  nombreEscena: Minijuego3
 --- !u!65 &126109544
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -985,7 +985,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 097dca099919a48488e35a14a86296b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nombreEscena: MiniJuego2
+  nombreEscena: Minijuego2
 --- !u!65 &1493956013
 BoxCollider:
   m_ObjectHideFlags: 0
