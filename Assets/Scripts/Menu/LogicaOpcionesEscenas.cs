@@ -16,7 +16,7 @@ public class LogicaOpcionesEscenas : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Cursor.lockState = CursorLockMode.Confined;
+        //Cursor.lockState = CursorLockMode.Confined;
         
         if (Input.GetKeyDown(KeyCode.Escape))
         {

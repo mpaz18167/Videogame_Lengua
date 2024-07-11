@@ -29,10 +29,13 @@ public class JugadorLobby : MonoBehaviour
     public Camera playerCamera;
     public GameObject playerModel;
 
+    [SerializeField]
+    private Animator anim;
 
     void Start()
     {
         charController = GetComponent<CharacterController>();
+        
     }
 
     // Update is called once per frame
@@ -54,7 +57,7 @@ public class JugadorLobby : MonoBehaviour
 
         if (charController.isGrounded)
         {
-            moveDirection.y = 0f;
+            //moveDirection.y = 0f;
             nJumpsValue = nJumps;
             //COYOTETIME
             coyoteTimeBool = true;
@@ -92,7 +95,8 @@ public class JugadorLobby : MonoBehaviour
 
         charController.Move(moveDirection * Time.deltaTime);
 
-
+        anim.SetFloat("Speed",Mathf.Abs(moveDirection.x) + Mathf.Abs(moveDirection.z));
+        anim.SetBool("Grounded", charController.isGrounded);
     }
 
     private void ControlBufferSalto()

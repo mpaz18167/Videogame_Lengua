@@ -7,11 +7,12 @@ TagManager:
   - Trampolin
   - Bullet
   - Opciones
+  - Ground
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Floor
   - Water
   - UI
   - 
