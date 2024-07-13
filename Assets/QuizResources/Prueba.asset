@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0459f9292860a5548b4d05e3bf11e3aa, type: 3}
-  m_Name: QuestionData
+  m_Name: Prueba
   m_EditorClassIdentifier: 
   questions:
-  - questionInfo: Sirve?
+  - questionInfo: Sirve la funcion de Texto?
     questionType: 0
     questionImg: {fileID: 0}
     questionClip: {fileID: 0}
@@ -24,9 +24,9 @@ MonoBehaviour:
     - Talvez
     - Creo
     correctAns: Si
-  - questionInfo: Se ve
+  - questionInfo: Se ve la imagen?
     questionType: 1
-    questionImg: {fileID: 21300000, guid: 4ed76a075a27cd6478cc3700707ee2c5, type: 3}
+    questionImg: {fileID: 21300000, guid: d65a06f1a5c934b429bab55e742d12e2, type: 3}
     questionClip: {fileID: 0}
     questionVideo: {fileID: 0}
     options:
@@ -35,21 +35,21 @@ MonoBehaviour:
     - Creo
     - Talvez
     correctAns: Si
-  - questionInfo: Se mueve?
+  - questionInfo: Se ve el VIDEO?
     questionType: 2
     questionImg: {fileID: 0}
     questionClip: {fileID: 0}
-    questionVideo: {fileID: 32900000, guid: 6924c82eecfa1274682a18828fa385b3, type: 3}
+    questionVideo: {fileID: 32900000, guid: 9d288c6a96ce11b4198e818d5a6e61da, type: 3}
     options:
     - Si
     - No
     - Talvez
     - Ya se rompio
     correctAns: Si
-  - questionInfo: Se Escucha?
+  - questionInfo: Se Escucha el audio?
     questionType: 3
     questionImg: {fileID: 0}
-    questionClip: {fileID: 8300000, guid: badfefec2ba56eb48bf10916ac3cb8b5, type: 3}
+    questionClip: {fileID: 8300000, guid: c7e18dcf79d4ba243a0b974011033982, type: 3}
     questionVideo: {fileID: 0}
     options:
     - Si
