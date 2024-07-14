@@ -304,16 +304,16 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 4
     m_ConditionEvent: velocityY
-    m_EventTreshold: 0
+    m_EventTreshold: -0.4
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -5750967558117203149}
   m_Solo: 0
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0
+  m_TransitionDuration: 0.07891895
   m_TransitionOffset: 0
-  m_ExitTime: 0.9908892
+  m_ExitTime: 0.91197026
   m_HasExitTime: 0
   m_HasFixedDuration: 0
   m_InterruptionSource: 0
