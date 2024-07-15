@@ -9,23 +9,36 @@ public class PlayerMove : MonoBehaviour
     private Vector3 velocity;
     private float gravity = -9.8f;
     public bool inFloor;
+    public bool cayendo=false;
 
-    [Header("Stats")]
+    [Header("STATS")]
     public float speedMovemente;
     public float turnTime = 0.2f;
     public float jumpHeight = 3;
     public float jumpForce = -2;
 
-    [Header("References")]
+    [Header("REFERENCES")]
     public Transform floor;
     public float floorDistance = 0.1f;
     public LayerMask layerFloor;
+
+    [Header("PARTICLES")]
+    [SerializeField] private ParticleSystem polvoPies;
+    [SerializeField] private ParticleSystem polvoSalto;
+    private ParticleSystem.EmissionModule emisionPolvoPies;
+    [Header("SOUNDSVFX")]
+    [SerializeField] private AudioSource footSteps;
+
+
+
 
 
     private void Awake()
     {
         chPlayer = GetComponent<CharacterController>();
-        anim = GetComponentInChildren<Animator>();    
+        anim = GetComponentInChildren<Animator>();
+        emisionPolvoPies = polvoPies.emission;
+
     }
 
     // Update is called once per frame
@@ -52,13 +65,23 @@ public class PlayerMove : MonoBehaviour
 
             Vector3 movementDirection = Quaternion.Euler(0, rotationAngle, 0) * Vector3.forward;
 
-            transform.rotation = Quaternion.Euler(0,angle, 0);
+            transform.rotation = Quaternion.Euler(0, angle, 0);
 
             chPlayer.Move(movementDirection.normalized * speedMovemente * Time.deltaTime);
+
+            //PARTICULAS PIES CAMINAR
+            if (inFloor) {
+
+                emisionPolvoPies.rateOverTime = 50f;
+                footSteps.enabled = true;
+            }
+
         }
         else
         {
             anim.SetBool("isMoving", false);
+            footSteps.enabled = false;
+            emisionPolvoPies.rateOverTime = 0f;
         }
 
     }
@@ -71,6 +94,7 @@ public class PlayerMove : MonoBehaviour
 
     private void Jump()
     {
+        bool wasInFloor = inFloor;
         inFloor = Physics.CheckSphere(floor.position, floorDistance, layerFloor);
         anim.SetBool("inFloor", inFloor);
 
@@ -78,19 +102,26 @@ public class PlayerMove : MonoBehaviour
         {
             velocity.y = jumpForce;
 
+            if (!wasInFloor)
+            {
+                polvoSalto.Play();
+                
+            }
+            
         }
 
-        if (Input.GetButtonDown("Jump") && inFloor) 
+        /*if (Input.GetButtonDown("Jump") && inFloor)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * jumpForce * gravity);
             anim.SetBool("isJumping", true);
 
-        }
-
+        }*/
         velocity.y += gravity * Time.deltaTime;
 
-        chPlayer.Move(velocity*Time.deltaTime);
+        chPlayer.Move(velocity * Time.deltaTime);
     }
+
+
 
 
 
