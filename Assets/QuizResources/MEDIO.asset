@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0459f9292860a5548b4d05e3bf11e3aa, type: 3}
+  m_Name: MEDIO
+  m_EditorClassIdentifier: 
+  questions:
+  - questionInfo: "Mira la imagen y responde correctamente. \xBFCon que silaba comienza?"
+    questionType: 1
+    questionImg: {fileID: 21300000, guid: 68acbf8f01ec0484f836bd87dfae8a45, type: 3}
+    questionClip: {fileID: 0}
+    questionVideo: {fileID: 0}
+    options:
+    - Pa
+    - Ma
+    - Pe
+    - Su
+    correctAns: Pa
+  - questionInfo: "\xBFQue estan haciendo Bob y Patricio?"
+    questionType: 2
+    questionImg: {fileID: 0}
+    questionClip: {fileID: 0}
+    questionVideo: {fileID: 32900000, guid: e724194553f2a70419df40ebcd550b11, type: 3}
+    options:
+    - Durmiendo
+    - Trabajando
+    - Corriendo
+    - Quedarse quieto
+    correctAns: Corriendo
+  - questionInfo: "\xBFQue es comunicaci\xF3n no verbal?"
+    questionType: 1
+    questionImg: {fileID: 21300000, guid: f7ee62f382f9e1f49beb330030e5b02e, type: 3}
+    questionClip: {fileID: 0}
+    questionVideo: {fileID: 0}
+    options:
+    - Decir cosas bonitas
+    - No comunicarse con nadie
+    - Hablar sin palabras, usando gestos
+    - Hablar bajo
+    correctAns: Hablar sin palabras, usando gestos
+  - questionInfo: "\xBFCual es una forma de comunicaci\xF3n no verbal?"
+    questionType: 1
+    questionImg: {fileID: 21300000, guid: 6544344736a3e3940aa55bbac6500171, type: 3}
+    questionClip: {fileID: 0}
+    questionVideo: {fileID: 0}
+    options:
+    - Escribir una carta
+    - Sonreir
+    - Gritar muy fuerte
+    - No decir nada
+    correctAns: Sonreir
+  - questionInfo: "\xBFCual es una forma de comunicaci\xF3n usando tecnolog\xEDa?"
+    questionType: 1
+    questionImg: {fileID: 21300000, guid: fc6404746e7a90d43b430f369b1dcbdc, type: 3}
+    questionClip: {fileID: 0}
+    questionVideo: {fileID: 0}
+    options:
+    - Escribir una carta a mano
+    - Gritar muy fuerte
+    - Enviar un mensaje de texto
+    - No hablar con nadie
+    correctAns: Enviar un mensaje de texto

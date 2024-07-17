@@ -22,6 +22,6 @@ public class DatosDelJugador : MonoBehaviour
     public void IncrementarMonedas(int m)
     {
         numeroMonedas += m;
-        monedas.text = "Monedas:  " + numeroMonedas;
+        monedas.text = "" + numeroMonedas;
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlataformaSuelta : MonoBehaviour
 {
 
-    private float esperaParaCaer = 0.3f;
+    private float esperaParaCaer = 0.4f;
     private float esperaParaDestruir = 2f;
     private float esperaParaReaparecer = 2.0f;
     private Rigidbody rb;

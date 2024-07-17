@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EntreEscenas : MonoBehaviour
 {
+    
     private void Awake()
     {
         var noDestruirEntreEscenas = FindObjectsOfType<EntreEscenas>();
@@ -13,17 +14,10 @@ public class EntreEscenas : MonoBehaviour
             return;
         }
 
+        
+
         DontDestroyOnLoad(gameObject);
     }
 
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  
 }

@@ -9,14 +9,18 @@ public class QuizUI : MonoBehaviour
 {
     [SerializeField] private QuizManager quizManager;
 
-    [SerializeField] private TextMeshProUGUI questionText, scoreTextMesh,timerTextMesh;
+    [SerializeField] private TextMeshProUGUI questionText, scoreTextMesh,timerTextMesh, scoreTextGameOver;
     [SerializeField] private List<Image> lifeImageList;
     [SerializeField] private GameObject gameOverPanel, mainMenuPanel, gameMenuPanel;
     [SerializeField] private Image questionImage;
     [SerializeField] private UnityEngine.Video.VideoPlayer questionVideo;
-    [SerializeField] private AudioSource questionAudio;
+    [SerializeField] private AudioSource questionAudio,AnswerAUDIO;
     [SerializeField] private List<Button> options, uiButtons;
     [SerializeField] private Color correctCol, wrongCol, normalCol;
+
+    [SerializeField] private AudioClip correctAnsClip;
+    [SerializeField] private AudioClip wrongtAnsClip;
+
 
     private Question question;
     private bool answered;
@@ -136,11 +140,13 @@ public class QuizUI : MonoBehaviour
                 if (val)
                 {
                     btn.image.color = correctCol;
+                    PlaySound(correctAnsClip);
 
                 }
                 else
                 {
                     btn.image.color = wrongCol;
+                    PlaySound(wrongtAnsClip);
                 }
             }
 
@@ -176,5 +182,21 @@ public class QuizUI : MonoBehaviour
     public void ReduceLife(int index)
     {
         lifeImageList[index].color = wrongCol;
+    }
+
+    public void ShowGameOverPanel(int score)
+    {
+        gameOverPanel.SetActive(true);
+        mainMenuPanel.SetActive(false);
+        gameMenuPanel.SetActive(false);
+        scoreTextGameOver.text = "" + score;
+    }
+
+    public void PlaySound(AudioClip clip)
+    {
+        if (clip != null && AnswerAUDIO != null)
+        {
+            AnswerAUDIO.PlayOneShot(clip);
+        }
     }
 }

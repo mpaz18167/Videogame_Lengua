@@ -4,20 +4,44 @@ using UnityEngine;
 
 public class ControlMoneda : MonoBehaviour
 {
-    private float velocidadRotacion = 80;
+    private float velocidadRotacion = 80f;
+    [SerializeField] private int puntosMoneda= 50;
+    [SerializeField] private AudioClip sonidoRecolectar;
+    private AudioSource audioMoneda;
+    private bool recolectada = false;
 
+    private void Start()
+    {
+        audioMoneda = GetComponent<AudioSource>();
+        if (sonidoRecolectar != null)
+        {
+
+            audioMoneda.clip = sonidoRecolectar;
+        }
+    }
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(0, velocidadRotacion * Time.deltaTime, 0);
+        if(!recolectada)
+        {
+            transform.Rotate(0, velocidadRotacion * Time.deltaTime, 0);
+        }
+
     }
+        
 
      private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            DatosDelJugador.datosDelJugadorInstancia.IncrementarMonedas(1);
-            Destroy(this.gameObject);
+            recolectada=true;
+
+            DatosDelJugador.datosDelJugadorInstancia.IncrementarMonedas(puntosMoneda);
+            audioMoneda.Play();
+
+            GetComponentInChildren<Renderer>().enabled = false;
+            GetComponent<Collider>().enabled = false;
+            Destroy(this.gameObject,sonidoRecolectar.length);
 
         }
     }

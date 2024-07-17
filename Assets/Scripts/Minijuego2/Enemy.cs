@@ -14,12 +14,13 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float escapeTime = 5f; //Tiempo antes de escapar por arriba
     [SerializeField] private float destroyDelay = 2f; //Tiempo antes de destruirse despues de escapar
 
-    [SerializeField] private Camera mainCamera; 
+    [SerializeField] private Camera mainCamera;
 
-    [SerializeField] public int puntos = 0; 
+    [SerializeField] public int puntos = 10;
     [SerializeField] public int vidas = 3;
     [SerializeField] private bool pregCorrect;
     [SerializeField] private string nombreEscena;
+
 
 
 
@@ -27,6 +28,8 @@ public class Enemy : MonoBehaviour
     private float changeDirectionTimer;
     private float lastShootTime;
     private bool escaping;
+
+    private UI ui;
 
 
 
@@ -41,6 +44,17 @@ public class Enemy : MonoBehaviour
         ChangeDirection(true);
         lastShootTime = Time.time;
         escaping = false;
+
+        mainCamera = FindObjectOfType<Camera>();
+        
+        
+
+        ui = FindObjectOfType<UI>();
+        if (ui == null)
+        {
+            Debug.LogError("No se encontro el componente UI");
+        }
+
     }
 
     // Update is called once per frame
@@ -51,7 +65,7 @@ public class Enemy : MonoBehaviour
             MoveDuck();
             UpdateDirectionChange();
             CheckBoundaries();
-            
+
         }
         CheckEscape();
 
@@ -67,15 +81,15 @@ public class Enemy : MonoBehaviour
         } while (!forceChange && Vector3.Distance(moveDirection, newDirection) < minDirectionChange);
 
         moveDirection = newDirection;
-        changeDirectionTimer = Random.Range(changeDirectionInterval*0.5f, changeDirectionInterval*1.5f );
-        
-        
+        changeDirectionTimer = Random.Range(changeDirectionInterval * 0.5f, changeDirectionInterval * 1.5f);
+
+
     }
 
     private void MoveDuck()
     {
         transform.Translate(moveDirection * moveSpeed * Time.deltaTime);
-        
+
     }
 
     private void UpdateDirectionChange()
@@ -93,31 +107,31 @@ public class Enemy : MonoBehaviour
     {
         Vector3 screenPos = mainCamera.WorldToViewportPoint(transform.position);
 
-        if(screenPos.x < boundaryBuffer || screenPos.x> 1f - boundaryBuffer || 
-            screenPos.y < boundaryBuffer || screenPos.y > 1f - boundaryBuffer || 
-            transform.position.y< boundaryBuffer) 
+        if (screenPos.x < boundaryBuffer || screenPos.x > 1f - boundaryBuffer ||
+            screenPos.y < boundaryBuffer || screenPos.y > 1f - boundaryBuffer ||
+            transform.position.y < boundaryBuffer)
         {
             ChangeDirection(true);
 
             Vector3 clampedPosition = mainCamera.ViewportToWorldPoint(new Vector3(
-                Mathf.Clamp(screenPos.x, boundaryBuffer, 1-boundaryBuffer),
-                Mathf.Clamp(screenPos.y, boundaryBuffer, 1-boundaryBuffer),
+                Mathf.Clamp(screenPos.x, boundaryBuffer, 1 - boundaryBuffer),
+                Mathf.Clamp(screenPos.y, boundaryBuffer, 1 - boundaryBuffer),
                 screenPos.z
             ));
             clampedPosition.y = Mathf.Max(clampedPosition.y, 0f);
             transform.position = clampedPosition;
         }
 
-        
+
     }
 
     private void CheckEscape()
     {
-        if (Time.time - lastShootTime > escapeTime )
+        if (Time.time - lastShootTime > escapeTime)
         {
             escaping = true;
-            transform.Translate(Vector3.up * moveSpeed *  Time.deltaTime);
-            Destroy(gameObject,destroyDelay);
+            transform.Translate(Vector3.up * moveSpeed * Time.deltaTime);
+            Destroy(gameObject, destroyDelay);
         }
     }
 
@@ -128,6 +142,10 @@ public class Enemy : MonoBehaviour
         {
             OnDuckShoot(pregCorrect);
 
+            Collider bulletCollider = collision.gameObject.GetComponent<Collider>();
+            bulletCollider.enabled = false;
+            
+
         }
     }
 
@@ -137,26 +155,33 @@ public class Enemy : MonoBehaviour
 
         if (estadoCorrecto)
         {
-            puntos++;
-            Debug.Log("Le diste +1 punto");
-
-            //Destroy(gameObject);
+            IncrementarPuntos();
+            
+            Debug.Log("Le diste +10 punto");
         }
         else
         {
-            vidas--;
+            DecrementarVidas();
+            
             Debug.Log("Perdista -1 vida");
-           // Destroy(gameObject);
 
         }
+
+        Destroy(gameObject);
         lastShootTime = Time.time;
 
-        if (vidas <=0)
-        {
-            Debug.Log("Perdista todas las vidas");
-            SceneManager.LoadScene(nombreEscena);
-
-        }
 
     }
+
+    private void IncrementarPuntos()
+    {
+        FindAnyObjectByType<UI>()?.IncrementarPuntos(puntos);
+    }
+
+    private void DecrementarVidas()
+
+    {
+        FindObjectOfType<UI>()?.DecrementarVidas();
+    }
+   
 }

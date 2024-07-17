@@ -118,16 +118,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89cb08f3758d0c644921ece382ec0a6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 3
   changeDirectionInterval: 2
   minDirectionChange: 0.5
   boundaryBuffer: 0.05
   escapeTime: 15
   destroyDelay: 2
   mainCamera: {fileID: 0}
-  puntos: 0
+  puntos: 10
   vidas: 3
   pregCorrect: 1
   nombreEscena: Lobby
-  puntostextObj: {fileID: 0}
-  vidastextObj: {fileID: 0}

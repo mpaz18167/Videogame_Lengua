@@ -15,11 +15,10 @@ public class PlataformaMovil : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player")) 
+        if (collision.gameObject.CompareTag("Player") ) 
         {
 
         }
-
         else
         {
             velocidadPlataforma *= -1;
@@ -29,7 +28,10 @@ public class PlataformaMovil : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        other.transform.SetParent(this.transform);
+       
+            other.transform.SetParent(this.transform);
+
+        
     }
 
     private void OnTriggerExit(Collider other)

@@ -11,6 +11,7 @@ public class MousePosition : MonoBehaviour
 
     [SerializeField] private Vector3 screenPosition;
 
+    private bool isActive = true;
 
 
     // Start is called before the first frame update
@@ -24,9 +25,13 @@ public class MousePosition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        FollowCursor();
+        if (isActive)
+        {
+            FollowCursor();
 
-        RotateGun();
+            RotateGun();
+        }
+        
 
     }
     private void FollowCursor()
@@ -52,6 +57,13 @@ public class MousePosition : MonoBehaviour
 
         // Aplicar la rotación al arma
         gun.rotation = targetRotation;
+    }
+    public void Deactivate()
+    {
+        isActive = false;
+        Cursor.visible = true;
+        gun.gameObject.SetActive(false);
+        gameObject.SetActive(false);
     }
 }
     

@@ -8,6 +8,7 @@ public class OpcionesMenu : MonoBehaviour
 
     public void EmpezarNivel(string NombreNivel)
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(NombreNivel);
     }
     public void Salir()

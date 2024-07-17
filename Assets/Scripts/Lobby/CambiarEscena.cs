@@ -8,6 +8,10 @@ public class CambiarEscena : MonoBehaviour
     public string nombreEscena;
     private void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene(nombreEscena);
+        if(other.gameObject.CompareTag("Player"))
+        {
+            SceneManager.LoadScene(nombreEscena);
+        }
+        
     }
 }

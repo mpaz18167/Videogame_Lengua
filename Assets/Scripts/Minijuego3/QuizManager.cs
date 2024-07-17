@@ -7,8 +7,11 @@ public class QuizManager : MonoBehaviour
 {
     [SerializeField] private QuizUI quizUI;
     [SerializeField] private List<QuizDatAScriptable> quizDataList;
-    [SerializeField] private float timeLimit =30;
+    [SerializeField] private float timeLimit = 60;
+
     
+    
+
     private List<Question> questions;
     private Question selectedQuestion;
     private int scoreCount = 0;
@@ -18,12 +21,16 @@ public class QuizManager : MonoBehaviour
     public GameStatus gameStatus = GameStatus.Next;
 
     public GameStatus GameStatus { get { return gameStatus; } }
+
+
     // Start is called before the first frame update
     public void StartGame(int index)
     {
         scoreCount = 0;
         currentTime = timeLimit;
         lifeRemaining = 3;
+
+       
 
         questions = new List<Question>();   
 
@@ -58,12 +65,13 @@ public class QuizManager : MonoBehaviour
     private void SetTimer (float value)
     {
         TimeSpan time = TimeSpan.FromSeconds(value);
-        quizUI.TimerText.text = "TIEMPO:" + time.ToString("mm':'ss"); 
+        quizUI.TimerText.text = "TIEMPO:" + time.ToString("mm':'ss");
 
         if (currentTime <= 0)
         {
             gameStatus = GameStatus.Next;
-            quizUI.GameOverPanel.SetActive(true);
+            
+            quizUI.ShowGameOverPanel(scoreCount);
         }
     }
     
@@ -84,7 +92,8 @@ public class QuizManager : MonoBehaviour
             if(lifeRemaining <=0)
             {
                 gameStatus = GameStatus.Next;
-                quizUI.GameOverPanel.SetActive(true);
+                
+                quizUI.ShowGameOverPanel(scoreCount);
             }
         }
 
@@ -97,13 +106,19 @@ public class QuizManager : MonoBehaviour
             else
             {
                 gameStatus = GameStatus.Next;
-                quizUI.GameOverPanel.SetActive(true);
+                
+                quizUI.ShowGameOverPanel(scoreCount);
 
             }
         }
 
         
         return correctAns;
+    }
+
+    public int GetScore()
+    {
+        return scoreCount;
     }
 }
 

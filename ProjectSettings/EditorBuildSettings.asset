@@ -12,11 +12,26 @@ EditorBuildSettings:
     path: Assets/Scenes/Lobby.unity
     guid: 10409f40d5b7ab34fa7b62568642c13a
   - enabled: 1
+    path: Assets/Scenes/TutorialMinijuego1.unity
+    guid: ce06a3f68bf73b44682df8ae25ba26dd
+  - enabled: 1
+    path: Assets/Scenes/TutorialMinijuego2.unity
+    guid: ae721a69af5859744bbdc49c2af0d2da
+  - enabled: 1
+    path: Assets/Scenes/TutorialMinijuego3.unity
+    guid: a7b8abb1d64e6114f92863080f15c10c
+  - enabled: 1
     path: Assets/Scenes/MiniJuego1/MiniJuego1.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
+    path: Assets/Scenes/MiniJuego1/MiniJuego1Nivel2.unity
+    guid: 1cc287e6ea918714c8d830ec73a32434
+  - enabled: 1
     path: Assets/Scenes/Minijuego2/Minijuego2.unity
     guid: aaa53015302a9e3488e26f1f7d88d719
+  - enabled: 1
+    path: Assets/Scenes/Minijuego2/Minijuego2Nivel2.unity
+    guid: bd1dc93b484770047b08907cc757e5ec
   - enabled: 1
     path: Assets/Scenes/Minijuego3/Minijuego3.unity
     guid: 758aedef31913db469e6a52a4bde02d5

@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0459f9292860a5548b4d05e3bf11e3aa, type: 3}
+  m_Name: DIFICIL
+  m_EditorClassIdentifier: 
+  questions:
+  - questionInfo: "Juanito est\xE1 jugando con sus amigos en el parque. \xC9l quiere
+      que todos jueguen al mismo juego, pero algunos amigos quieren jugar otro juego
+      diferente. \xBFQu\xE9 puede hacer Juanito para resolver este problema?"
+    questionType: 1
+    questionImg: {fileID: 21300000, guid: 4f4c5198d8d0c7f4eb14da4329fc5a1f, type: 3}
+    questionClip: {fileID: 0}
+    questionVideo: {fileID: 0}
+    options:
+    - Decirles que no jueguen
+    - Decirles que jueguen su juego
+    - "Hablar con sus amigos y decidir juntos qu\xE9 juego jugar"
+    - Ignorar a sus amigos y jugar solo
+    correctAns: "Hablar con sus amigos y decidir juntos qu\xE9 juego jugar"
+  - questionInfo: "\xBFPara qu\xE9 usamos las palabras \"por favor\" y \"gracias\"?"
+    questionType: 1
+    questionImg: {fileID: 21300000, guid: 949c483140150a34d8171f5fe2982cc6, type: 3}
+    questionClip: {fileID: 0}
+    questionVideo: {fileID: 0}
+    options:
+    - Para pedir cosas educadamente
+    - Para hacer ruidos fuertes
+    - "Para hablar r\xE1pido"
+    - "Para ignorar a los dem\xE1s"
+    correctAns: Para pedir cosas educadamente
+  - questionInfo: "\xBFCu\xE1l de estas opciones es un sustantivo propio?"
+    questionType: 1
+    questionImg: {fileID: 21300000, guid: 8129b4ed128ad5740b30cdae7d34bb66, type: 3}
+    questionClip: {fileID: 0}
+    questionVideo: {fileID: 0}
+    options:
+    - mesa
+    - ciudad
+    - Juan
+    - libro
+    correctAns: Juan
+  - questionInfo: "De la oracion: Los tres gatos se quedaron mirando a su due\xF1o.
+      \xBFCual es el verbo?"
+    questionType: 2
+    questionImg: {fileID: 0}
+    questionClip: {fileID: 0}
+    questionVideo: {fileID: 32900000, guid: d76338d0de8ebce44ba2481c8979d7e6, type: 3}
+    options:
+    - Tres
+    - quedaron
+    - gatos
+    - "due\xF1o"
+    correctAns: quedaron
+  - questionInfo: "De la oracion: El perro marr\xF3n corre r\xE1pido por el parque.
+      \xBFCual es el sustantivo?"
+    questionType: 1
+    questionImg: {fileID: 21300000, guid: 78727eb438dd8f046af81d7eb4116a77, type: 3}
+    questionClip: {fileID: 0}
+    questionVideo: {fileID: 0}
+    options:
+    - corre
+    - "marr\xF3n"
+    - perro
+    - "r\xE1pido"
+    correctAns: perro
+  - questionInfo: "De la oracion: El cielo azul se ve\xEDa despejado por la ma\xF1ana.
+      \xBFCual es el adjetivo?"
+    questionType: 1
+    questionImg: {fileID: 21300000, guid: cabbf796a6e7b1342a27e303aadc2e5f, type: 3}
+    questionClip: {fileID: 0}
+    questionVideo: {fileID: 0}
+    options:
+    - cielo
+    - se
+    - despejado
+    - "ma\xF1ana"
+    correctAns: despejado
